@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madison Jaide Hair | Premium Hair Stylist & Color Specialist</title>
+    <meta name="description" content="Luxury hair transformations by Madison Jaide. Specializing in premium color and custom cuts for the modern, style-conscious client.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Google Fonts -->
+    <!-- Preload Google Fonts -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"></noscript>
+    
+    <!-- Critical CSS -->
+    <style>
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s, visibility 0.5s;
+        }
+        .loader {
+            width: 50px;
+            height: 50px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #c0a080;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Critical hero styles */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 600px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            color: #fff;
+        }
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+        .hero .container {
+            position: relative;
+            z-index: 2;
+        }
+    </style>
+    
+    <!-- Preload CSS -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"></noscript>
+    
+    <link rel="preload" href="/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/css/style.css"></noscript>
+    
+    <link rel="preload" href="https://unpkg.com/aos@2.3.1/dist/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"></noscript>
+    
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">Madison Jaide Hair</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#portfolio">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonials">Testimonials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#booking" class="btn btn-primary ms-lg-3">Book Now</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Video Background -->
+    <header class="hero">
+        <video autoplay muted loop playsinline class="hero-video">
+            <source src="bgrimg.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content" data-aos="fade-up">
+                <h1>Luxury Hair Design <br>for the Modern Individual</h1>
+                <p class="lead">Experience the perfect blend of creativity and precision with our bespoke hair services.</p>
+                <div class="hero-buttons">
+                    <a href="https://bookings.gettimely.com/madisonjaidehair/book?uri=https%3A%2F%2Fbook.gettimely.com%2FBooking%2FLocation%2F296885%3Fmobile%3DTrue%26params%3D%25253fclient-login%25253dtrue" class="btn btn-primary me-3" target="_blank" rel="noopener noreferrer">Book Now</a>
+                    <a href="#services" class="btn btn-outline-light hero-services-btn">Our Services</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Services Section -->
+    <section id="services" class="py-5">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2>Signature Services</h2>
+                <p class="text-muted">Luxury hair experiences designed around your unique beauty</p>
+            </div>
+
+            <!-- Haircut Packages -->
+            <div class="service-category mb-5" data-aos="fade-up">
+                <div class="service-category-header">
+                    <h3>Haircut Packages</h3>
+                    <p>Precision cutting designed around your lifestyle, hair texture, and desired finish.</p>
+                </div>
+                <div class="row g-4 mt-3">
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <h4>Signature Cut & Finish</h4>
+                            <p>A complete restyle with personalized attention to detail.</p>
+                            <span class="price">$180+</span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <h4>Restyle / Transformation</h4>
+                            <p>Dramatic change with expert consultation.</p>
+                            <span class="price">$220+</span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <h4>Maintenance Trim</h4>
+                            <p>Keep your style fresh and healthy.</p>
+                            <span class="price">$95+</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="service-note mt-3">Each haircut includes a personalized consultation and professional finish.</p>
+            </div>
+
+            <!-- Treatments -->
+            <div class="service-category mb-5" data-aos="fade-up">
+                <div class="service-category-header">
+                    <h3>Basin Treatments & K.Revive Rituals</h3>
+                    <p>Luxury in-salon treatments focused on hair health, hydration, and repair.</p>
+                </div>
+                <div class="row g-4 mt-3">
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <h4>Deep Conditioning & Repair</h4>
+                            <p>Intensive treatment for damaged hair.</p>
+                            <span class="price">$85+</span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <h4>K.Revive Therapy</h4>
+                            <p>Professional hair restoration treatment.</p>
+                            <span class="price">$120+</span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <h4>Scalp & Moisture</h4>
+                            <p>Restore balance and hydration.</p>
+                            <span class="price">$75+</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="service-note mt-3">Ideal for color maintenance or hair recovery.</p>
+            </div>
+
+            <!-- Color Services -->
+            <div class="service-category mb-5" data-aos="fade-up">
+                <div class="service-category-header">
+                    <h3>Foil & Balayage Packages</h3>
+                    <p>Custom blonding and dimensional color services tailored to your hair goals.</p>
+                </div>
+                <div class="row g-4 mt-3">
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <h4>Full Head Foils</h4>
+                            <p>Complete dimensional color transformation.</p>
+                            <span class="price">$280+</span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <h4>Partial Foils</h4>
+                            <p>Framing and brightening highlights.</p>
+                            <span class="price">$220+</span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <h4>Balayage</h4>
+                            <p>Natural, sun-kissed dimension.</p>
+                            <span class="price">$250+</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="service-note mt-3">All foil and balayage services include toning and finishing.</p>
+            </div>
+
+            <!-- Additional Services -->
+            <div class="row">
+                <div class="col-lg-6" data-aos="fade-up">
+                    <div class="service-category h-100">
+                        <h4>Color Services</h4>
+                        <ul class="service-list">
+                            <li>
+                                <span class="service-name">Root Retouch</span>
+                                <span class="service-price">$120+</span>
+                            </li>
+                            <li>
+                                <span class="service-name">All-Over Color</span>
+                                <span class="service-price">$150+</span>
+                            </li>
+                            <li>
+                                <span class="service-name">Toner & Gloss</span>
+                                <span class="service-price">$65+</span>
+                            </li>
+                            <li>
+                                <span class="service-name">Color Correction</span>
+                                <span class="service-price">Consultation</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-category h-100">
+                        <h4>Blow Waves & Styling</h4>
+                        <ul class="service-list">
+                            <li>
+                                <span class="service-name">Classic Blow Wave</span>
+                                <span class="service-price">$65+</span>
+                            </li>
+                            <li>
+                                <span class="service-name">Styled Finish</span>
+                                <span class="service-price">$85+</span>
+                            </li>
+                            <li>
+                                <span class="service-name">Special Occasion</span>
+                                <span class="service-price">$120+</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Consultation -->
+            <div class="service-consultation mt-5" data-aos="fade-up">
+                <h4>Complimentary Consultation</h4>
+                <p>A no-obligation consultation to discuss your hair goals, color history, and maintenance plan before booking. Recommended for first-time clients, transformations, and color corrections.</p>
+                <a href="#booking" class="btn btn-outline-dark mt-3">Book Consultation</a>
+            </div>
+
+            <!-- Add-Ons -->
+            <div class="service-addons mt-5" data-aos="fade-up">
+                <h5>Add-Ons <small>(with color services)</small></h5>
+                <div class="addon-tags">
+                    <span class="addon-tag">Bond Builders</span>
+                    <span class="addon-tag">Toners & Glosses</span>
+                    <span class="addon-tag">Basin Treatments</span>
+                    <span class="addon-tag">Extra Length/Thickness</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-5 bg-light">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2>Recent Work</h2>
+                <p class="text-muted">Explore our latest transformations</p>
+            </div>
+            <div class="row g-3">
+                <!-- Portfolio Item 1 -->
+                <div class="col-md-4 portfolio-item" data-category="color">
+                    <div class="portfolio-card">
+                        <div class="portfolio-img">
+                            <img src="balagaye-highlight.jpg" 
+                                 alt="Balayage Highlights" 
+                                 class="img-fluid">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-info">
+                                    <h5>Balayage Highlights</h5>
+                                    <span>Color</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Portfolio Item 2 -->
+                <div class="col-md-4 portfolio-item" data-category="cut">
+                    <div class="portfolio-card">
+                        <div class="portfolio-img">
+                            <img src="layered-cut.jpg" 
+                                 alt="Layered Cut" 
+                                 class="img-fluid">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-info">
+                                    <h5>Layered Cut</h5>
+                                    <span>Cut</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Portfolio Item 3 -->
+                <div class="col-md-4 portfolio-item" data-category="color">
+                    <div class="portfolio-card">
+                        <div class="portfolio-img">
+                            <img src="color-correction.jpg" 
+                                 alt="Color Correction" 
+                                 class="img-fluid">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-info">
+                                    <h5>Color Correction</h5>
+                                    <span>Color</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Portfolio Item 4 -->
+                <div class="col-md-4 portfolio-item" data-category="color">
+                    <div class="portfolio-card">
+                        <div class="portfolio-img">
+                            <img src="https://plus.unsplash.com/premium_photo-1661587367973-dfa3876e92f8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGJsb25kZSUyMHRyYW5zZm9ybWF0aW9ufGVufDB8fDB8fHww" 
+                                 alt="Blonde Transformation" 
+                                 class="img-fluid">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-info">
+                                    <h5>Blonde Transformation</h5>
+                                    <span>Color</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Portfolio Item 5 -->
+                <div class="col-md-4 portfolio-item" data-category="styling">
+                    <div class="portfolio-card">
+                        <div class="portfolio-img">
+                            <img src="https://images.unsplash.com/photo-1760220006440-4b98ad942c53?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YnJpZGFsJTIwc3R5bGUlMjBoYWlyfGVufDB8fDB8fHww" 
+                                 alt="Bridal Styling" 
+                                 class="img-fluid">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-info">
+                                    <h5>Bridal Styling</h5>
+                                    <span>Styling</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Portfolio Item 6 -->
+                <div class="col-md-4 portfolio-item" data-category="cut">
+                    <div class="portfolio-card">
+                        <div class="portfolio-img">
+                            <img src="https://images.unsplash.com/photo-1654097800183-574ba7368f74?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWVuJTIwY3V0fGVufDB8fDB8fHww" 
+                                 alt="Men's Cut" 
+                                 class="img-fluid">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-info">
+                                    <h5>Men's Cut</h5>
+                                    <span>Cut</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <img src="profile.jpg" alt="Madison Jaide" class="img-fluid rounded">
+                </div>
+                <div class="col-lg-6 ps-lg-5 mt-5 mt-lg-0" data-aos="fade-left">
+                    <h2>Meet Madison</h2>
+                    <p class="lead">With over a decade of experience in luxury salons across the world, I bring a refined eye for detail and a passion for creating beautiful, wearable hair.</p>
+                    <p>My approach combines technical precision with artistic vision, ensuring each client leaves feeling confident and transformed. I believe in continuous education and stay at the forefront of hair trends and techniques.</p>
+                    <a href="#booking" class="btn btn-outline-dark mt-3">Book a Consultation</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-5 bg-light">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2>Client Love</h2>
+                <p class="text-muted">What our clients say about their experience</p>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-4" data-aos="fade-up">
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p>"Madison is a true artist! She transformed my damaged hair into the healthiest it's ever been. Worth every penny."</p>
+                        <div class="client">- Sarah M.</div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p>"The best color I've ever had. Madison's attention to detail is unmatched. I get compliments daily!"</p>
+                        <div class="client">- Jessica T.</div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p>"Not just a stylist, but a true professional. The entire experience from start to finish was exceptional."</p>
+                        <div class="client">- Michaela R.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="row align-items-center">
+                        <!-- Booking Options -->
+                        <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
+                            <h2 class="mb-4">Book Your Appointment</h2>
+                            <p class="lead mb-4">Experience the Madison Jaide difference with our seamless online booking.</p>
+                            
+                            <div class="booking-option mb-4">
+                                <h4 class="h5">Quick Book</h4>
+                                <p>Book your appointment directly through our secure booking system.</p>
+                                <a href="https://bookings.gettimely.com/madisonjaide" 
+                                   target="_blank" 
+                                   rel="noopener noreferrer" 
+                                   class="btn btn-primary btn-lg w-100 mb-4">
+                                    Book Now
+                                </a>
+                            </div>
+                            
+                            <div class="booking-details">
+                                <h4 class="h5">Prefer to Call?</h4>
+                                <p class="mb-1">Speak with our team directly</p>
+                                <p class="h4 mb-4"><a href="tel:+1234567890" class="text-dark">(123) 456-7890</a></p>
+                                
+                                <h4 class="h5">Business Hours</h4>
+                                <ul class="list-unstyled">
+                                    <li>Monday - Friday: 9:00 AM - 7:00 PM</li>
+                                    <li>Saturday: 9:00 AM - 5:00 PM</li>
+                                    <li>Sunday: Closed</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- Embedded Booking Widget -->
+                        <div class="col-lg-6" data-aos="fade-left">
+                            <div class="booking-widget p-4 bg-light rounded">
+                                <h3 class="h4 mb-4">Online Booking</h3>
+                                <div class="ratio ratio-16x9">
+                                    <!-- Replace this iframe with your actual Timely booking widget embed code -->
+                                    <iframe 
+                                        src="https://bookings.gettimely.com/madisonjaide/embed" 
+                                        frameborder="0" 
+                                        allowfullscreen
+                                        loading="lazy">
+                                    </iframe>
+                                </div>
+                                <p class="small text-muted mt-3">Having trouble with the widget? <a href="https://bookings.gettimely.com/madisonjaide" target="_blank" rel="noopener noreferrer">Book directly here</a>.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h4>Madison Jaide Hair</h4>
+                    <p>Luxury hair design and color services for the modern, style-conscious individual.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/madisonjaidehair/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@mads.jperry" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#booking">Book Now</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5>Contact</h5>
+                    <p>
+                        123 Luxury Lane<br>
+                        Beverly Hills, CA 90210<br>
+                        (555) 123-4567<br>
+                        hello@madisonjaide.com
+                    </p>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2026 Madison Jaide Hair. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script>
+        // Load scripts with proper attributes
+        function loadScript(src, attrs = {}) {
+            return new Promise((resolve, reject) => {
+                const script = document.createElement('script');
+                script.src = src;
+                script.async = true;
+                
+                // Set additional attributes
+                Object.entries(attrs).forEach(([key, value]) => {
+                    script.setAttribute(key, value);
+                });
+                
+                script.onload = resolve;
+                script.onerror = reject;
+                document.body.appendChild(script);
+            });
+        }
+
+        // Load non-critical scripts after page load
+        window.addEventListener('load', function() {
+            // Load Font Awesome
+            loadScript('https://kit.fontawesome.com/your-code.js', { crossorigin: 'anonymous' });
+            
+            // Load AOS after other content is loaded
+            loadScript('https://unpkg.com/aos@2.3.1/dist/aos.js').then(() => {
+                if (typeof AOS !== 'undefined') {
+                    AOS.init({
+                        duration: 800,
+                        once: true
+                    });
+                }
+            });
+            
+            // Hide preloader
+            const preloader = document.querySelector('.preloader');
+            if (preloader) {
+                preloader.style.opacity = '0';
+                preloader.style.visibility = 'hidden';
+                setTimeout(() => {
+                    preloader.style.display = 'none';
+                }, 500);
+            }
+        });
+    </script>
+    
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    
+    <!-- Load main script with defer -->
+    <script src="/js/main.js" defer></script>
+</body>
+</html>
