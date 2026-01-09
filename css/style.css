@@ -922,11 +922,11 @@ footer h4:after, footer h5:after {
     .navbar-collapse {
         position: absolute;
         top: 100%;
-        left: 50%;
-        transform: translateX(-50%) translateY(-20px);
-        width: 95%;
-        max-width: 600px;
-        padding: 1.5rem;
+        left: 0;
+        right: 0;
+        width: 100%;
+        max-width: 100%;
+        padding: 1rem 0;
         background: white;
         box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
         transition: all 0.3s ease-in-out;
@@ -944,12 +944,8 @@ footer h4:after, footer h5:after {
     .navbar-collapse.show {
         visibility: visible;
         opacity: 1;
-        transform: translateX(-50%) translateY(0);
+        transform: translateY(0);
         max-height: 500px; /* Adjust based on your content */
-        border-radius: 8px;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-        border-top-left-radius: 0;
-        border-top-right-radius: 0;
     }
     
         
