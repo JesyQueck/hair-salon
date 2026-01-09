@@ -166,44 +166,4 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log('Form submitted!');
         });
     }
-
-    // Mobile menu toggle functionality
-    const navbarToggler = document.querySelector('.navbar-toggler');
-    const navbarCollapse = document.getElementById('navbarNav');
-
-    if (navbarToggler && navbarCollapse) {
-        // Create close icon element
-        const closeIcon = document.createElement('span');
-        closeIcon.classList.add('close-icon');
-        closeIcon.innerHTML = '&times;'; // × symbol
-        closeIcon.style.fontSize = '1.5rem';
-        closeIcon.style.cursor = 'pointer';
-        closeIcon.style.userSelect = 'none';
-        closeIcon.style.display = 'none';
-        navbarToggler.appendChild(closeIcon);
-
-        navbarToggler.addEventListener('click', () => {
-            const isShown = navbarCollapse.classList.contains('show');
-            if (isShown) {
-                // Hide the navbar by sliding it up and then removing 'show'
-                navbarCollapse.style.transform = 'translateY(-100%)';
-                setTimeout(() => {
-                    navbarCollapse.classList.remove('show');
-                    navbarCollapse.style.removeProperty('transform');
-                }, 300); // match CSS transition duration
-
-                // Show menu icon, hide close icon
-                navbarToggler.querySelector('.navbar-toggler-icon').style.display = '';
-                closeIcon.style.display = 'none';
-            } else {
-                // Show the navbar by adding 'show' and sliding down
-                navbarCollapse.classList.add('show');
-                navbarCollapse.style.transform = 'translateY(0)';
-
-                // Hide menu icon, show close icon
-                navbarToggler.querySelector('.navbar-toggler-icon').style.display = 'none';
-                closeIcon.style.display = '';
-            }
-        });
-    }
 });
