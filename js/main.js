@@ -1,4 +1,116 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Mobile Menu Elements
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const navbarCollapse = document.getElementById('navbarNav');
+    const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
+    const mobileNavLinks = document.querySelectorAll('.nav-link');
+    const faBars = mobileMenuToggle?.querySelector('.fa-bars');
+    const faTimes = mobileMenuToggle?.querySelector('.fa-times');
+    
+    // Initialize menu state
+    let isMenuOpen = false;
+    
+    // Function to set initial state
+    function initMobileMenu() {
+        if (window.innerWidth <= 991.98) {
+            closeMobileMenu();
+        } else {
+            // Reset for desktop
+            if (navbarCollapse) navbarCollapse.classList.remove('show');
+            if (mobileMenuOverlay) mobileMenuOverlay.style.display = 'none';
+            document.body.style.overflow = '';
+        }
+    }
+    
+    function toggleMobileMenu() {
+        isMenuOpen = !isMenuOpen;
+        
+        if (isMenuOpen) {
+            openMobileMenu();
+        } else {
+            closeMobileMenu();
+        }
+    }
+    
+    function openMobileMenu() {
+        if (!navbarCollapse || !mobileMenuOverlay || !mobileMenuToggle) return;
+        
+        isMenuOpen = true;
+        mobileMenuToggle.setAttribute('aria-expanded', 'true');
+        navbarCollapse.classList.add('show');
+        mobileMenuOverlay.style.display = 'block';
+        setTimeout(() => mobileMenuOverlay.classList.add('show'), 10);
+        document.body.style.overflow = 'hidden';
+        
+        // Update icons
+        if (faBars) faBars.style.opacity = '0';
+        if (faTimes) faTimes.style.opacity = '1';
+    }
+    
+    function closeMobileMenu() {
+        if (!navbarCollapse || !mobileMenuOverlay || !mobileMenuToggle) return;
+        
+        isMenuOpen = false;
+        mobileMenuToggle.setAttribute('aria-expanded', 'false');
+        navbarCollapse.classList.remove('show');
+        mobileMenuOverlay.classList.remove('show');
+        document.body.style.overflow = '';
+        
+        // Update icons
+        if (faBars) faBars.style.opacity = '1';
+        if (faTimes) faTimes.style.opacity = '0';
+        
+        // Hide overlay after transition
+        setTimeout(() => {
+            if (!isMenuOpen && mobileMenuOverlay) {
+                mobileMenuOverlay.style.display = 'none';
+            }
+        }, 300);
+    }
+    
+    // Initialize event listeners
+    function initEventListeners() {
+        // Toggle menu
+        if (mobileMenuToggle) {
+            mobileMenuToggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                toggleMobileMenu();
+            });
+        }
+        
+        // Close menu when clicking on overlay
+        if (mobileMenuOverlay) {
+            mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+        }
+        
+        // Close menu when clicking on nav links
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 991.98) {
+                    closeMobileMenu();
+                }
+            });
+        });
+        
+        // Handle window resize
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                if (window.innerWidth > 991.98) {
+                    closeMobileMenu();
+                } else {
+                    initMobileMenu();
+                }
+            }, 100);
+        });
+    }
+    
+    // Initialize everything
+    initMobileMenu();
+    initEventListeners();
+
     // Preloader
     function hidePreloader() {
         const preloader = document.querySelector('.preloader');
@@ -71,8 +183,14 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 });
             });
-            
+
             lazyImages.forEach(img => imageObserver.observe(img));
+        } else {
+            // Fallback for browsers that don't support IntersectionObserver
+            lazyImages.forEach(img => {
+                img.src = img.dataset.src;
+                img.removeAttribute('data-src');
+            });
         }
     }
 
@@ -84,49 +202,38 @@ document.addEventListener('DOMContentLoaded', function() {
             el.style.transition = 'opacity 0.5s ease';
         });
 
-        // Then initialize AOS with minimal settings
+        // Then initialize AOS with custom settings
         AOS.init({
-            duration: 400,
-            easing: 'ease-out',
+            duration: 800,
+            easing: 'ease-out-cubic',
             once: true,
-            mirror: false,
-            offset: 20,  // Trigger animation earlier
-            delay: 50,   // Minimal delay between animations
-            throttleDelay: 50,
+            offset: 100,
+            disable: window.innerWidth < 768,
             initClassName: 'aos-init',
-            disable: false, // Never disable AOS
-            startEvent: 'DOMContentLoaded' // Start immediately
-        });
-
-        // Force refresh to ensure elements are in view
-        window.addEventListener('load', () => {
-            AOS.refresh();
-            // Force reflow to ensure animations trigger
-            document.body.style.overflowX = 'hidden';
-            void document.body.offsetHeight;
+            animatedClassName: 'aos-animate',
+            useClassNames: false,
+            disableMutationObserver: false,
+            debounceDelay: 50,
+            throttleDelay: 99,
+            startEvent: 'DOMContentLoaded'
         });
     }
 
-    // Initialize lazy loading for portfolio images
-    lazyLoadImages();
-
     // Add active class to current nav link
     const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.nav-link');
+    const desktopNavLinks = document.querySelectorAll('.nav-link');
     
     function updateActiveNav() {
         let current = '';
         
         sections.forEach(section => {
             const sectionTop = section.offsetTop - 100;
-            const sectionHeight = section.offsetHeight;
-            
-            if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionTop + sectionHeight) {
+            if (window.pageYOffset >= sectionTop) {
                 current = '#' + section.getAttribute('id');
             }
         });
         
-        navLinks.forEach(link => {
+        desktopNavLinks.forEach(link => {
             link.classList.remove('active');
             if (link.getAttribute('href') === current) {
                 link.classList.add('active');
@@ -138,17 +245,17 @@ document.addEventListener('DOMContentLoaded', function() {
     updateActiveNav(); // Run once on load
 
     // Back to top button
-    const backToTop = document.getElementById('backToTop');
-    if (backToTop) {
+    const backToTopButton = document.querySelector('.back-to-top');
+    if (backToTopButton) {
         window.addEventListener('scroll', () => {
             if (window.pageYOffset > 300) {
-                backToTop.classList.add('active');
+                backToTopButton.classList.add('show');
             } else {
-                backToTop.classList.remove('active');
+                backToTopButton.classList.remove('show');
             }
         });
-        
-        backToTop.addEventListener('click', (e) => {
+
+        backToTopButton.addEventListener('click', (e) => {
             e.preventDefault();
             window.scrollTo({
                 top: 0,
@@ -157,13 +264,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Form submission handling (example)
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            // Add your form submission logic here
-            console.log('Form submitted!');
-        });
-    }
+    // Initialize lazy loading for images
+    lazyLoadImages();
 });

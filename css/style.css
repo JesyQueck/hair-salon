@@ -84,12 +84,64 @@ img {
     color: var(--white);
 }
 
+/* Mobile Menu Toggle */
+.navbar-toggler {
+    border: none;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    background: none;
+    color: var(--dark);
+    position: relative;
+    z-index: 1001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+.navbar-toggler .fa-bars,
+.navbar-toggler .fa-times {
+    position: absolute;
+    transition: all 0.3s ease;
+    font-size: 1.5rem;
+    color: var(--dark);
+}
+
+.navbar-toggler .fa-bars {
+    opacity: 1;
+    transform: rotate(0deg);
+}
+
+.navbar-toggler .fa-times {
+    opacity: 0;
+    transform: rotate(-90deg);
+}
+
+.navbar-toggler[aria-expanded="true"] .fa-bars {
+    opacity: 0;
+    transform: rotate(90deg);
+}
+
+.navbar-toggler[aria-expanded="true"] .fa-times {
+    opacity: 1;
+    transform: rotate(0deg);
+}
+
+/* Mobile Menu Overlay */
+.mobile-menu-overlay {
+    display: none; /* We don't need overlay for this style */
+}
+
 /* Navigation */
 .navbar {
-    padding: 1.5rem 0;
-    transition: var(--transition);
-    background-color: rgba(255, 255, 255, 0.9);
+    padding: 1rem 0;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .navbar.scrolled {
@@ -334,24 +386,31 @@ max-width: 800px;
 }
 
 .service-card p {
-    color: var(--text-light);
-    font-size: 0.95rem;
-    margin-bottom: 1.2rem;
-    position: relative;
-    z-index: 1;
+color: var(--text-light);
+font-size: 0.95rem;
+margin-bottom: 1.2rem;
+position: relative;
+z-index: 1;
 }
 
 .price {
-    display: inline-block;
-    font-weight: 700;
-    color: var(--accent);
-    font-size: 1.2rem;
-    letter-spacing: 0.5px;
-    position: relative;
-    z-index: 1;
+display: inline-block;
+font-weight: 700;
+color: var(--accent);
+font-size: 1.2rem;
+letter-spacing: 0.5px;
+position: relative;
+z-index: 1;
 }
 
 .service-note {
+font-style: italic;
+color: var(--text-light);
+text-align: center;
+margin-top: 1.5rem;
+padding-top: 1.5rem;
+border-top: 1px dashed rgba(0, 0, 0, 0.1);
+font-size: 0.95rem;
     font-style: italic;
     color: var(--text-light);
     text-align: center;
@@ -856,20 +915,75 @@ footer h4:after, footer h5:after {
 
 /* Responsive Styles */
 @media (max-width: 991.98px) {
+    .navbar {
+        padding: 0.5rem 0;
+    }
+    
     .navbar-collapse {
-        background: var(--white);
-        padding: 1rem;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-20px);
+        width: 90%;
+        max-width: 400px;
+        padding: 1.5rem;
+        background: white;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease-in-out;
+        overflow-y: auto;
+        visibility: hidden;
+        opacity: 0;
+        z-index: 999;
+        display: block !important;
+        transform: translateY(-20px);
+        max-height: 0;
+        margin: 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    
+    .navbar-collapse.show {
+        visibility: visible;
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+        max-height: 500px; /* Adjust based on your content */
+        border-radius: 8px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+    
+        
+    .navbar-nav {
+        width: 100%;
         margin-top: 1rem;
-        border-radius: 4px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+    
+    .nav-item {
+        margin: 0.5rem 0;
     }
     
     .nav-link {
-        padding: 0.5rem 0;
+        padding: 0.75rem 1rem;
+        color: var(--dark) !important;
+        font-weight: 500;
+        border-radius: 4px;
+        transition: all 0.2s ease;
+    }
+    
+    .nav-link:hover,
+    .nav-link:focus {
+        background-color: rgba(0, 0, 0, 0.05);
+    }
+    
+    .nav-link.active {
+        color: var(--primary) !important;
+        background-color: rgba(0, 0, 0, 0.05);
     }
     
     .hero h1 {
         font-size: 2.5rem;
+    }
+    
+    .nav-link {
+        padding: 0.5rem 0;
     }
     
     section {
