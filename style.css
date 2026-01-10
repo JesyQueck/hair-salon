@@ -697,6 +697,7 @@ font-size: 0.95rem;
 #booking .btn-primary:hover {
     background-color: var(--accent-dark);
     border-color: var(--accent-dark);
+    color: var(--accent);
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
