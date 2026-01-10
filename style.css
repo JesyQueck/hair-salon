@@ -603,7 +603,7 @@ font-size: 0.95rem;
 }
 
 #booking p:not(.lead) {
-    color: var(--text);
+    color: var(--text-light);
     line-height: 1.7;
     margin-bottom: 1.5rem;
 }
